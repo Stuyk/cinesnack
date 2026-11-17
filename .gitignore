@@ -7,3 +7,4 @@ out
 */settings.local.json
 .pbr-smoke-out
 *.tsbuildinfo
+dist-*

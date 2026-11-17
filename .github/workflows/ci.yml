@@ -108,7 +108,8 @@ jobs:
       - name: Check ffmpeg is bundled and runs
         shell: bash
         run: |
-          bin=$(find dist -path '*app.asar.unpacked/node_modules/ffmpeg-static/ffmpeg*' -type f | grep -v '\.md$' | head -n 1)
+          # Exact names only: the package also ships ffmpeg.LICENSE and ffmpeg.README next to it.
+          bin=$(find dist -path '*app.asar.unpacked/node_modules/ffmpeg-static/*' -type f \( -name ffmpeg -o -name ffmpeg.exe \) | head -n 1)
           if [ -z "$bin" ]; then
             echo "::error::ffmpeg is missing from the packaged app (asarUnpack broken?)"
             exit 1
