@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Recording: pick a screen or window, 5 second countdown, Ctrl+Alt+K records the focused window</title>
+<meta name="hypedoc:width" content="960">
+<meta name="hypedoc:wait" content="300">
+<link rel="stylesheet" href="../branding/brand.css">
+<style>
+  body { margin: 0; background: transparent; }
+  .card { margin: 8px; padding: 34px 40px 36px; }
+  .grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: start; }
+  h2 { font-size: 34px; margin-top: 10px; }
+  p { margin-top: 10px; font-size: 16px; line-height: 1.55; color: var(--fg-2); }
+  .shot { margin-top: 20px; }
+  .widgets { margin-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+  .widgets img { width: 100%; display: block; border-radius: 6px; border: 1px solid var(--line-strong); }
+  .sub { margin-top: 22px; }
+  ul { margin: 8px 0 0; padding-left: 18px; font-size: 15px; line-height: 1.7; color: var(--fg-2); }
+</style>
+</head>
+<body>
+<div class="panel card">
+  <div class="grid">
+    <div>
+      <span class="label">Recording</span>
+      <h2>Record from any app.</h2>
+      <p><kbd>Ctrl+Alt+K</kbd> records the window you're in. <kbd>Ctrl+K</kbd> lets you pick a screen or window. You get a 5 second countdown, it records with your computer's audio, and it stops by itself at 5:00. Both shortcuts can be changed.</p>
+      <div class="shot"><img src="../docs/screenshots/record-picker.png" alt=""></div>
+    </div>
+    <div>
+      <div class="label">The recording bar</div>
+      <div class="widgets">
+        <img src="../docs/screenshots/widget-countdown.png" alt="">
+        <img src="../docs/screenshots/widget-recording.png" alt="">
+      </div>
+      <p>The bar stays in the corner where you can see it, and it's kept out of the video.</p>
+      <div class="label sub">Stopping</div>
+      <ul>
+        <li><kbd>Ctrl+Alt+K</kbd> or <kbd>Ctrl+K</kbd> again, from any app</li>
+        <li>Click the red tray icon</li>
+        <li>Stop in the editor window</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

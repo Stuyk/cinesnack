@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>What a clip looks like at 50 MB, by length and frame rate</title>
+<meta name="hypedoc:width" content="960">
+<meta name="hypedoc:wait" content="300">
+<link rel="stylesheet" href="../branding/brand.css">
+<style>
+  body { margin: 0; background: transparent; }
+  .card { margin: 8px; padding: 34px 40px 36px; }
+  h2 { font-size: 34px; margin-top: 10px; }
+  .lede { margin-top: 10px; font-size: 17px; line-height: 1.55; color: var(--fg-2); max-width: 760px; }
+  table { margin-top: 24px; width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); font-size: 16px; }
+  th { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3); background: var(--raised); }
+  td { background: var(--panel); font-family: 'IBM Plex Mono', monospace; color: var(--fg-2); }
+  td:first-child { color: var(--fg); font-weight: 500; }
+  tr:last-child td { border-bottom: 0; }
+  td.hl { color: var(--accent-fg); }
+  .note { margin-top: 16px; font-size: 14px; color: var(--fg-3); line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="panel card">
+  <span class="label">Real numbers</span>
+  <h2>What you get at 50&nbsp;MB.</h2>
+  <p class="lede">The budget is 95% of the limit. Audio takes 128 kbps and video gets the rest. Resolution is the biggest size that still gets 0.07 bits per pixel per frame. After the two-pass encode the file is measured, and re-encoded smaller if it's over.</p>
+  <table>
+    <tr><th>Length</th><th>At 60 fps</th><th>At 30 fps</th><th>Video</th><th>File</th></tr>
+    <tr><td>0:15</td><td>1920×1080</td><td>1920×1080</td><td>12.4 Mbps</td><td class="hl">23.6 MB</td></tr>
+    <tr><td>1:00</td><td>1280×720</td><td>1920×1080</td><td>5.5 Mbps</td><td class="hl">42.4 MB</td></tr>
+    <tr><td>3:00</td><td>854×480</td><td>1280×720</td><td>2.1 Mbps</td><td class="hl">47.5 MB</td></tr>
+    <tr><td>5:00</td><td>640×360</td><td>960×540</td><td>1.2 Mbps</td><td class="hl">47.5 MB</td></tr>
+  </table>
+  <p class="note">1080p60 source with audio, numbers from <span class="mono">src/shared/plan.ts</span>. Short clips stop at about 12 Mbps instead of filling the file, so they stream smoothly. MB here means 1,000,000 bytes.</p>
+</div>
+</body>
+</html>

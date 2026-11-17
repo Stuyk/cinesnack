@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d97ff"/>
+      <stop offset="1" stop-color="#1c69de"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="944" height="944" rx="220" fill="url(#tile)"/>
+
+  <!-- Film frame -->
+  <rect x="170" y="250" width="560" height="440" rx="56" fill="#ffffff"/>
+  <g fill="#2a7ff0">
+    <rect x="222" y="282" width="64" height="44" rx="12"/>
+    <rect x="334" y="282" width="64" height="44" rx="12"/>
+    <rect x="446" y="282" width="64" height="44" rx="12"/>
+    <rect x="558" y="282" width="64" height="44" rx="12"/>
+    <rect x="222" y="614" width="64" height="44" rx="12"/>
+    <rect x="334" y="614" width="64" height="44" rx="12"/>
+    <rect x="446" y="614" width="64" height="44" rx="12"/>
+    <rect x="558" y="614" width="64" height="44" rx="12"/>
+  </g>
+  <rect x="210" y="358" width="480" height="224" rx="24" fill="#123a73"/>
+
+  <!-- Stopwatch -->
+  <rect x="672" y="456" width="76" height="64" rx="16" fill="#ffffff" stroke="#1f6fe3" stroke-width="28" paint-order="stroke"/>
+  <circle cx="710" cy="694" r="172" fill="#ffffff" stroke="#1f6fe3" stroke-width="36" paint-order="stroke"/>
+  <circle cx="710" cy="694" r="122" fill="none" stroke="#123a73" stroke-width="22"/>
+  <path d="M710 694 L710 610" stroke="#123a73" stroke-width="30" stroke-linecap="round"/>
+  <path d="M710 694 L768 724" stroke="#123a73" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="710" cy="694" r="20" fill="#123a73"/>
+</svg>

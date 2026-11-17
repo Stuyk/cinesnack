@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CineSnack social card</title>
+<link rel="stylesheet" href="brand.css">
+<style>
+  body { width: 1280px; height: 640px; overflow: hidden; display: grid; grid-template-columns: 540px 1fr; background: var(--app); }
+  .left { padding: 70px 0 0 72px; position: relative; }
+  .brand { display: flex; align-items: center; gap: 14px; font-weight: 600; font-size: 28px; }
+  .brand img { width: 56px; height: 56px; }
+  h1 { margin-top: 48px; font-size: 64px; }
+  p { margin-top: 24px; font-size: 24px; line-height: 1.45; color: var(--fg-2); max-width: 420px; }
+  .foot { position: absolute; left: 72px; bottom: 56px; font-size: 18px; color: var(--fg-3); }
+  .right { position: relative; overflow: hidden; }
+  .shot { position: absolute; left: 20px; top: 84px; width: 900px; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="brand"><img src="../build/icon.svg" alt="">CineSnack</div>
+    <h1>Any clip, small enough to share.</h1>
+    <p>Trim it, export under 50&nbsp;MB, paste it with <kbd>Ctrl+V</kbd>. The audio stays.</p>
+    <div class="foot">Free and open source · Windows, macOS, Linux</div>
+  </div>
+  <div class="right">
+    <div class="shot"><img src="../docs/screenshots/app.png" alt=""></div>
+  </div>
+</body>
+</html>

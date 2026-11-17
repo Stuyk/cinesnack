@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CineSnack: a 212 MB clip goes in, a 47.5 MB file comes out on your clipboard</title>
+<meta name="hypedoc:width" content="960">
+<meta name="hypedoc:wait" content="300">
+<link rel="stylesheet" href="../branding/brand.css">
+<style>
+  body { margin: 0; background: transparent; }
+  .card { margin: 8px; padding: 36px 40px 38px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 20px; }
+  .brand img { width: 40px; height: 40px; }
+  h1 { margin-top: 24px; font-size: 44px; }
+  .sub { margin-top: 12px; font-size: 18px; line-height: 1.55; color: var(--fg-2); max-width: 760px; }
+  .flow { margin-top: 30px; display: grid; grid-template-columns: 1fr 36px 1.2fr 36px 1fr; align-items: stretch; }
+  .box { border-radius: 8px; border: 1px solid var(--line-strong); background: var(--raised); padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 9px; }
+  .name { font: 500 14px 'IBM Plex Mono', monospace; color: var(--fg-2); word-break: break-all; }
+  .big { font: 500 34px 'IBM Plex Mono', monospace; letter-spacing: -0.02em; }
+  .meta { font: 13px/1.65 'IBM Plex Mono', monospace; color: var(--fg-3); }
+  .box.out { background: var(--accent-soft); border-color: var(--accent); }
+  .box.out .meta { color: var(--accent-fg); }
+  .arrow { display: flex; align-items: center; justify-content: center; color: var(--fg-3); }
+  .bar { position: relative; height: 22px; border-radius: 4px; background: var(--base); border: 1px solid var(--line); }
+  .bar span { position: absolute; top: -1px; bottom: -1px; left: 28%; width: 23%; border: 2px solid var(--accent); border-left-width: 6px; border-right-width: 6px; border-radius: 4px; }
+  .paste { margin-top: 24px; font-size: 17px; color: var(--fg-2); }
+</style>
+</head>
+<body>
+<div class="panel card">
+  <div class="brand"><img src="../build/icon.svg" alt="">CineSnack</div>
+  <h1>Any clip, small enough to share.</h1>
+  <p class="sub">Open a video or record your screen, set the in and out points, pick 10, 50 or 500&nbsp;MB. CineSnack works out the bitrate and resolution, encodes it, and puts the file on your clipboard.</p>
+  <div class="flow">
+    <div class="box">
+      <span class="label">In</span>
+      <div class="name">gameplay.mkv</div>
+      <div class="big">212 MB</div>
+      <div class="meta">1920×1080 · 60 fps<br>2:31 · game + mic audio</div>
+    </div>
+    <div class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 12h16M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="box">
+      <span class="label">Trim and plan</span>
+      <div class="bar"><span></span></div>
+      <div class="meta">keep 0:42 to 1:17 (0:35)<br>limit 50 MB, 10.7 Mbps video<br>128 kbps audio, 1080p60<br>two-pass H.264, size checked</div>
+    </div>
+    <div class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 12h16M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="box out">
+      <span class="label" style="color:var(--accent-fg)">Out</span>
+      <div class="name">gameplay-share.mp4</div>
+      <div class="big">47.5 MB</div>
+      <div class="meta">on your clipboard<br>H.264 + AAC, plays anywhere</div>
+    </div>
+  </div>
+  <p class="paste">Then press <kbd>Ctrl+V</kbd> in a chat, an email or a post.</p>
+</div>
+</body>
+</html>

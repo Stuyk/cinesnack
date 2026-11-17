@@ -1,0 +1,119 @@
+appId: com.stuyk.cinesnack
+productName: CineSnack
+
+directories:
+  buildResources: build
+  output: dist
+
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron.vite.config.{js,ts,mjs,cjs}'
+  - '!{.eslintcache,eslint.config.mjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+  - '!{.hypedoc,branding,docs,scripts}/**'
+  - '!*.tsbuildinfo'
+  - '!{.github,.claude}/**'
+  - '!dist*/**'
+
+asarUnpack:
+  - resources/**
+  - '**/node_modules/ffmpeg-static/**'
+
+win:
+  executableName: CineSnack
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  artifactName: ${productName}-Windows-Setup-${version}.${ext}
+
+portable:
+  artifactName: ${productName}-Windows-Portable-${version}.${ext}
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+    - target: tar.gz
+      arch:
+        - x64
+  icon: build/icon.png
+  executableName: cinesnack
+  category: AudioVideo;Video;
+  mimeTypes:
+    - video/mp4
+    - video/quicktime
+    - video/x-matroska
+    - video/webm
+  desktop:
+    entry:
+      Actions: record;open;
+    desktopActions:
+      record:
+        Name: Record screen
+        Exec: cinesnack --record
+      open:
+        Name: Open video
+        Exec: cinesnack --open
+  maintainer: Stuyk
+  synopsis: Trim, record and shrink video clips for sharing
+  description: Record or open any video, trim it, and get an MP4 under 50 MB with the audio kept, copied to your clipboard.
+  artifactName: ${productName}-Linux-${version}.${ext}
+
+appImage:
+  artifactName: ${productName}-Linux-${version}.${ext}
+
+deb:
+  artifactName: ${productName}-Linux-${version}.${ext}
+  # Optional helpers: system audio while recording, focused-window detection, file clipboard.
+  recommends:
+    - pulseaudio-utils
+    - x11-utils
+    - xclip
+
+mac:
+  icon: build/icon.icns
+  category: public.app-category.video
+  # Built on Apple Silicon runners; ffmpeg-static ships the matching arm64 binary.
+  target:
+    - target: dmg
+      arch:
+        - arm64
+    - target: zip
+      arch:
+        - arm64
+  entitlementsInherit: build/entitlements.mac.plist
+  extendInfo:
+    - NSDocumentsFolderUsageDescription: CineSnack requests access to your Documents folder to load and save video files.
+    - NSDownloadsFolderUsageDescription: CineSnack requests access to your Downloads folder to load and save video files.
+  notarize: false
+  artifactName: ${productName}-macOS-${version}.${ext}
+
+dmg:
+  artifactName: ${productName}-macOS-${version}.${ext}
+
+npmRebuild: false
+
+publish:
+  provider: github
+  owner: stuyk
+  repo: cinesnack
+  releaseType: draft
