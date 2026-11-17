@@ -1,0 +1,12 @@
+# Always check out text files with LF endings, on every OS. Without this, Windows (and the
+# windows-latest CI runner, which has core.autocrlf=true) gets CRLF and Prettier flags every line.
+* text=auto eol=lf
+
+# Never touch binaries.
+*.png binary
+*.jpg binary
+*.ico binary
+*.icns binary
+*.woff binary
+*.woff2 binary
+*.mp4 binary
